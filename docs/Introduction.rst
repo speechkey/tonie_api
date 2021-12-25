@@ -46,6 +46,8 @@ Example
     # remove all chapters on creative tonie
     api.households['yourHouseholdID'].creativetonies['yourTonieID'].remove_all_chapters()
 
+    # remove some chapters on creative tonie
+    api.households['yourHouseholdID'].creativetonies['yourTonieID'].remove_chapters(chapters)
 *********
 Resources
 *********

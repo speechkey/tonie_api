@@ -306,6 +306,18 @@ class _CreativeTonie():
         log.info(f'All chapters of {self.id} removed.')
         return r
 
+    def remove_chapters(self, chapters):
+        """Removes chapters stored on this tonie.
+
+        :param chapters chapters to be removed
+        :return: response in JSON format
+        :rtype: dict
+        """
+        r = self.session.patch_json(
+            f'{self.API_URL}', json={'chapters': [c for c in self.chapters() if c not in chapters]})
+        log.info(f'{chapters} Chapters of {self.id} removed.')
+        return r
+
     def add_chapter(self, fileid, title):
         """Add single chapter to the end of the tonie.
 
