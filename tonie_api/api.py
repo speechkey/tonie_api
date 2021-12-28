@@ -314,7 +314,7 @@ class _CreativeTonie():
         :rtype: dict
         """
         r = self.session.patch_json(
-            f'{self.API_URL}', json={'chapters': [c for c in self.chapters() if c not in chapters]})
+            f'{self.API_URL}', json={'chapters': [c for c in self.chapters if c not in chapters]})
         log.info(f'{chapters} Chapters of {self.id} removed.')
         return r
 
